@@ -163,8 +163,9 @@ void takeTurn(Player& active, Player& opponent, Node*& start){
     // start indicates where in the active player's hand they will begin searching
     // needs to be a reference to a pointer so the value of the pointer is changed
     if (start){
-      if (opponent.hand.find_and_remove(start)){
-          active.hand.find_and_remove(start);
+      Node* temp = start;
+      if (opponent.hand.find_and_remove(temp)){
+          active.hand.find_and_remove(temp);
           cout << active.name << " picked matching card " << *start << endl;
           start = start -> next;
       }
