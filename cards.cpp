@@ -103,7 +103,7 @@ Node* CardList::getNext(Node* n) {
 Node* CardList::find(Node* n){
   Node* f = first;
   while (f) {
-    if (*f == *n) {
+    if (f -> card == n -> card) {
       return f;}
     f = f -> next;
   }
